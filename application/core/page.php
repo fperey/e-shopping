@@ -16,11 +16,11 @@ class Page{
 	}
 	
 	public static function fetchMainSection($pageName){
-		include 'template/' . $pageName;
+		include 'pages/' . $pageName;
 	}
 	
 	public static function renderPage($pageName){
-		include 'template/header_tmp.php';
+		include 'pages/header_tmp.php';
 
 		foreach (Page::$scriptsFiles as $value){
 			print "<link href=\"css/". $value ."\" rel=\"stylesheet\">\n";
