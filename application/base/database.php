@@ -1,4 +1,10 @@
 <?php
+
+
+// IMPLEMENTAR PDO
+// Tener en cuenta que con PDO se pueden manejar conexiones persistentes
+// lo que entiendo a hoy que funciona como un pull de conexiones
+
 class Database {
 	
 	private $host;
