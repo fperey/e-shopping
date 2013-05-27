@@ -15,21 +15,21 @@ class Page{
 	}
 	
 	public static function fetchMainSection($app,$pageName){
-		include $app. 'pages/' . $pageName;
+		include $app. '/pages/' . $pageName;
 	}
 	
 	public static function renderPage($app,$pageName){
-		include $app."pages/header_tmp.php";
+		include $app."/pages/header_tmp.php";
 
-		foreach (Page::$scriptsFiles as $value){
-			print "<link href=\"css/". $value ."\" rel=\"stylesheet\">\n";
+		foreach (Page::$stylesFiles as $value){
+			print "<link href=\"".$app."/css/". $value ."\" rel=\"stylesheet\">\n";
 		}
 		
 		print "<body>";
 		self::fetchMainSection($app,$pageName);
 		print "<script src=\"http://code.jquery.com/jquery-1.9.1.min.js\"></script>\n";
 		foreach (Page::$scriptsFiles as $value){
-			print "<script src=\"js/". $value ."\"></script>\n";
+			print "<script src=\"".$app."/js/". $value ."\"></script>\n";
 		}
 		print "</body>\n";
 		print "</html>\n";

@@ -5,10 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Insert title here</title>
 
-<!-- Bootstrap Styles Inicio -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<!-- Bootstrap Styles Fin -->
-
 <style type="text/css">
 			body {
 			padding-top: 60px;
@@ -18,5 +14,3 @@
 }
 </style>
 </head>
-
-<body>

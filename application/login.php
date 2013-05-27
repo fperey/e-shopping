@@ -1,7 +1,7 @@
 <?php
 
-require_once 'core/page.php';
-require_once 'core/session.php';
+require_once 'base/page.php';
+require_once 'base/session.php';
 
 $user = $_POST['username'];
 $pass = $_POST['password'];
