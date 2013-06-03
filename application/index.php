@@ -1,7 +1,7 @@
 <?php
 
-require_once 'base/page.php';
-require_once 'base/session.php';
+require_once 'base/Page.php';
+require_once 'base/Session.php';
 
 
 if(Session::check_session()){
