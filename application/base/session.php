@@ -1,21 +1,26 @@
 <?php
 
-require_once "base/database.php";
+require_once 'core/entities/UserAccounts.php';
+require_once "base/EsDatabase.php";
 
 class Session
 {	
 	static function open_session($user,$pass){
-		$query = "select * from es_user_accounts where username='".
-					$user."' and password='".$pass."' and blocked=false";
 		
-		$db = new Database("localhost", "es_portal", "es_portal00","es_users");
+		$db = new EsDatabase();
+		$userAccounts = new UserAccounts;
+		$where = "username='".$user."' and password='".$pass."' and blocked=false";
 		
-		if($qid = $db->query($query)){
-			if($db->num_rows($qid)){
-				// Create Session
-				session_start();
-				$_SESSION["username"]=$user;
-				return true;
+		if($db->connect()){
+			$obj = $db->select($userAccounts,$where);
+			
+			if(!is_null($obj)){
+				if(count($obj)>0){
+					// Create Session
+					session_start();
+					$_SESSION["username"]=$user;
+					return true;
+				}
 			}
 		}
 		return false;
